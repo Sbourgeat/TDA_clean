@@ -21,7 +21,8 @@ import pandas
 print("Packages impoted")
 
 DIRECTORY = "/home/samuel/brainMorpho/Brains_to_CC/" # add your input directory
-OUTPUT_DIR = "/home/samuel/TDA/TDA_EntropyHypothesis/" # add your output directory
+OUTPUT_DIR = "/home/samuel/Project/TDA/TDA_EntropyHypothesis/" # add your output directory
+
 
 # Import the tiff files with tifffile
 
@@ -79,4 +80,4 @@ df = pandas.DataFrame(Entropy_all, columns=["entropy0", "entropy1", "entropy2"])
 df["DGRP"] = DGRP_lines
 df["Sex"] = Sex
 
-df.to_csv(OUTPUT_DIR + "Entropy_all_July_20_2023_V4_Normalized_Entropy.csv") # insert the name of the csv fle you want: CHANGE THE VALUE TO FIT YOUR NEEDS
+df.to_csv(OUTPUT_DIR + "Entropy_all_September_14_2023_Normalized_Entropy.csv") # insert the name of the csv fle you want: CHANGE THE VALUE TO FIT YOUR NEEDS
