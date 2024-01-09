@@ -147,7 +147,7 @@ for file in Files:
 
     # Run the optimisation
 
-    ep = 2000
+    ep = 200
 
 
     losses, dgms = [], []
@@ -157,7 +157,7 @@ for file in Files:
             # Squared distances to the diagonal
             persistence_loss = 15*tf.math.reduce_sum(tf.abs(dgm[:,1]-dgm[:,0])) # This value defines the max distance we allow to have between the diagonal and the points in the persistence diagrams 
             # 0-1 regularization for the pixels
-            regularization = 0#tf.math.reduce_sum(tf.math.minimum(tf.abs(X),tf.abs(1-X)))
+            regularization = tf.math.reduce_sum(tf.math.minimum(tf.abs(X),tf.abs(1-X)))
             loss = persistence_loss + regularization
         gradients = tape.gradient(loss, [X])
         
